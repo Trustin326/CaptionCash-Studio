@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Payment Success — CaptionCash Studio</title>
+  <link rel="icon" href="assets/img/icon-wand.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span data-brand>CaptionCash Studio</span>
+        <span class="badge">Success</span>
+      </a>
+      <nav class="nav-links">
+        <a href="app.html" class="btn small">Open App</a>
+        <a href="index.html" class="btn small ghost">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="app-wrap">
+    <div class="container">
+      <div class="panel">
+        <div class="kicker">Payment complete</div>
+        <h1 class="h2" style="margin-top:10px;">You’re in 🎉</h1>
+        <p class="subhead">
+          If you deliver access keys manually, paste the key below to unlock Pro features on this device.
+        </p>
+
+        <div class="form-grid">
+          <div>
+            <label for="k">Access key</label>
+            <input id="k" placeholder="PRO-CCS-2025-BBBB"/>
+          </div>
+          <div>
+            <label>&nbsp;</label>
+            <button class="btn primary" id="u">Unlock</button>
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:14px;">
+          <a class="btn ok" href="app.html">Go to App</a>
+          <a class="btn" href="index.html#pricing">Back to Pricing</a>
+        </div>
+
+        <div class="note" style="margin-top:12px;">
+          Seller: You can customize keys + Stripe links in <code style="font-family:var(--mono);">assets/js/config.js</code>.
+        </div>
+      </div>
+
+      <div class="toast" aria-live="polite">Unlocked!</div>
+    </div>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/unlock.js"></script>
+  <script>
+    document.getElementById("u").addEventListener("click", ()=>{
+      const v = (document.getElementById("k").value || "").trim().toUpperCase();
+      const keys = (window.APP_CONFIG && window.APP_CONFIG.unlockKeys) || {};
+      const inList = (arr)=> (arr||[]).map(s=>String(s).trim().toUpperCase()).includes(v);
+      let plan = null;
+      if (inList(keys.lifetime)) plan = "lifetime";
+      else if (inList(keys.pro)) plan = "pro";
+      else if (inList(keys.starter)) plan = "pro";
+      if (!plan){
+        const t = document.querySelector(".toast");
+        t.textContent = "Key not recognized.";
+        t.classList.add("show");
+        setTimeout(()=>t.classList.remove("show"), 1600);
+        return;
+      }
+      window.CCS_AUTH?.setPlan?.(plan);
+      const t = document.querySelector(".toast");
+      t.textContent = "Unlocked! Open the app.";
+      t.classList.add("show");
+      setTimeout(()=>t.classList.remove("show"), 1600);
+    });
+  </script>
+</body>
+</html>

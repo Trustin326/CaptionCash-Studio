@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>CaptionCash Studio — App</title>
+  <meta name="description" content="Generate hooks, captions, scripts, hashtags, and comment replies.">
+  <link rel="icon" href="assets/img/icon-wand.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span data-brand>CaptionCash Studio</span>
+        <span class="badge" data-plan-pill>Free Demo</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#pricing">Pricing</a>
+        <a href="#" data-open-lock class="btn small">Unlock</a>
+        <a href="index.html" class="btn small ghost">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="app-wrap">
+    <div class="container">
+      <div class="kicker">Caption Pack Generator</div>
+      <h1 class="h2" style="margin-top:10px;">Build a full post pack in one click.</h1>
+      <p class="subhead">Fill a few fields (or leave blank), then generate. Copy, download, or export CSV (Pro).</p>
+
+      <div class="panel">
+        <div class="form-grid">
+          <div>
+            <label for="platform">Platform</label>
+            <select id="platform">
+              <option value="tiktok">TikTok</option>
+              <option value="instagram">Instagram</option>
+              <option value="youtube">YouTube Shorts</option>
+              <option value="pinterest">Pinterest</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="tone">Tone</label>
+            <select id="tone">
+              <option value="bold">Bold</option>
+              <option value="luxury">Luxury</option>
+              <option value="friendly">Friendly</option>
+              <option value="funny">Funny</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="goal">Goal (what they want)</label>
+            <input id="goal" placeholder="make $20–$100 per post / get leads / sell my ebook"/>
+          </div>
+
+          <div>
+            <label for="product">Offer / product name</label>
+            <input id="product" placeholder="My $7 Digital Product Blueprint"/>
+          </div>
+
+          <div>
+            <label for="niche">Niche</label>
+            <input id="niche" placeholder="affiliate marketing / lashes / real estate / recipes"/>
+          </div>
+
+          <div>
+            <label for="audience">Audience</label>
+            <input id="audience" placeholder="busy moms / beginners / creators"/>
+          </div>
+
+          <div>
+            <label for="cta">CTA text</label>
+            <input id="cta" placeholder="Link in bio / Link in comments / DM me INFO"/>
+          </div>
+
+          <div>
+            <label for="benefit">Benefit (promise)</label>
+            <input id="benefit" placeholder="captions, hooks, and hashtags in seconds"/>
+          </div>
+
+          <div>
+            <label for="pain">Pain point</label>
+            <input id="pain" placeholder="stuck staring at a blank screen"/>
+          </div>
+
+          <div>
+            <label for="thing">What they have</label>
+            <input id="thing" placeholder="a phone + 10 minutes"/>
+          </div>
+
+          <div>
+            <label for="offer">Offer keyword (optional)</label>
+            <input id="offer" placeholder="the toolkit / the blueprint / the course"/>
+          </div>
+
+          <div>
+            <label for="notes">Extra notes (optional)</label>
+            <textarea id="notes" placeholder="Any extra details you want reflected (optional)."></textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" data-generate>Generate Pack</button>
+          <button class="btn" data-reset>Reset</button>
+
+          <button class="btn ok" data-export>Download TXT Pack</button>
+          <button class="btn" data-export-csv data-pro-only>Export CSV (Pro)</button>
+          <span class="btn danger" data-pro-lock style="display:none; cursor:default;">CSV export is Pro</span>
+
+          <a class="btn" href="index.html#pricing">Upgrade</a>
+        </div>
+
+        <div class="note" style="margin-top:10px;">
+          Free demo generates smaller packs. Pro unlock enables bigger packs + CSV export. Use <strong>Unlock</strong> (top right) to paste a key.
+        </div>
+      </div>
+
+      <div class="out">
+        <div id="bHooks" class="block">
+          <div class="top">
+            <div>
+              <h4 data-title>Hooks</h4>
+              <div class="meta" data-meta>—</div>
+            </div>
+            <button class="btn small" data-copy>Copy</button>
+          </div>
+          <pre></pre>
+        </div>
+
+        <div id="bCaptions" class="block">
+          <div class="top">
+            <div>
+              <h4 data-title>Captions</h4>
+              <div class="meta" data-meta>—</div>
+            </div>
+            <button class="btn small" data-copy>Copy</button>
+          </div>
+          <pre></pre>
+        </div>
+
+        <div id="bScripts" class="block">
+          <div class="top">
+            <div>
+              <h4 data-title>Short Scripts</h4>
+              <div class="meta" data-meta>—</div>
+            </div>
+            <button class="btn small" data-copy>Copy</button>
+          </div>
+          <pre></pre>
+        </div>
+
+        <div id="bReplies" class="block">
+          <div class="top">
+            <div>
+              <h4 data-title>Comment Replies</h4>
+              <div class="meta" data-meta>—</div>
+            </div>
+            <button class="btn small" data-copy>Copy</button>
+          </div>
+          <pre></pre>
+        </div>
+
+        <div id="bTags" class="block">
+          <div class="top">
+            <div>
+              <h4 data-title>Hashtags</h4>
+              <div class="meta" data-meta>—</div>
+            </div>
+            <button class="btn small" data-copy>Copy</button>
+          </div>
+          <pre></pre>
+        </div>
+      </div>
+
+      <section class="footer">
+        <div class="hr"></div>
+        <div style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+          <div>© <span id="y"></span> <span data-brand>CaptionCash Studio</span></div>
+          <div style="display:flex; gap:12px; align-items:center;">
+            <a class="underline" href="index.html#pricing">Pricing</a>
+            <a class="underline" href="#" data-open-lock>Unlock</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Unlock Overlay -->
+  <div id="lockOverlay" class="lock" aria-hidden="true">
+    <div class="lock-card" role="dialog" aria-modal="true" aria-label="Unlock Pro">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+        <h3>Unlock Pro</h3>
+        <a class="btn small ghost" href="#" data-close-lock>Close</a>
+      </div>
+      <p>
+        Paste your access key to unlock bigger packs + CSV export.
+        <span class="badge" style="margin-left:8px;">Current: <span id="currentPlan">free</span></span>
+      </p>
+
+      <div class="lock-grid">
+        <div>
+          <label for="accessKey">Access key</label>
+          <input id="accessKey" placeholder="PRO-CCS-2025-BBBB"/>
+          <div class="actions" style="margin-top:10px;">
+            <button class="btn primary" data-unlock>Unlock</button>
+            <a class="btn" href="index.html#pricing">Get a key</a>
+          </div>
+        </div>
+        <div class="note">
+          <strong>Seller tip:</strong> Put a key in <code style="font-family:var(--mono);">assets/js/config.js</code>, then email that key after Stripe purchase.
+          <br/><br/>
+          If you want fully automated subscriptions later, add a backend + Stripe webhooks.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" aria-live="polite">Copied!</div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/unlock.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

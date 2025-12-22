@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pixar-style creator character with laptop and colorful floating icons">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="0.45" stop-color="#06b6d4"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="35%" r="65%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="skin" cx="40%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#b98b67"/>
+      <stop offset="1" stop-color="#7a4d33"/>
+    </radialGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#1f2a44"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f472b6"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="laptop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2e8f0"/>
+      <stop offset="1" stop-color="#94a3b8"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0b1020" flood-opacity="0.35"/>
+    </filter>
+    <filter id="spark" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" rx="60" fill="url(#bg)"/>
+  <ellipse cx="700" cy="300" rx="620" ry="420" fill="url(#glow)"/>
+
+  <!-- Floating blobs -->
+  <g opacity="0.9">
+    <circle cx="250" cy="210" r="95" fill="#22c55e" opacity="0.55"/>
+    <circle cx="1160" cy="210" r="110" fill="#fb7185" opacity="0.55"/>
+    <circle cx="1120" cy="650" r="140" fill="#60a5fa" opacity="0.45"/>
+    <circle cx="270" cy="660" r="140" fill="#fbbf24" opacity="0.45"/>
+  </g>
+
+  <!-- Card base -->
+  <g filter="url(#softShadow)">
+    <rect x="220" y="170" width="960" height="560" rx="44" fill="#0b1020" opacity="0.28"/>
+    <rect x="240" y="190" width="920" height="520" rx="40" fill="#ffffff" opacity="0.14"/>
+  </g>
+
+  <!-- Character -->
+  <g transform="translate(520,245)" filter="url(#softShadow)">
+    <!-- Hair back -->
+    <path d="M190,40 C125,40 82,88 82,155 C82,260 142,310 220,310 C310,310 366,258 366,170 C366,95 318,40 250,40 Z"
+          fill="url(#hair)"/>
+    <!-- Face -->
+    <ellipse cx="224" cy="165" rx="132" ry="150" fill="url(#skin)"/>
+    <!-- Cheeks highlight -->
+    <ellipse cx="170" cy="200" rx="36" ry="24" fill="#ffedd5" opacity="0.18"/>
+    <ellipse cx="280" cy="200" rx="36" ry="24" fill="#ffedd5" opacity="0.18"/>
+
+    <!-- Eyes -->
+    <g>
+      <ellipse cx="170" cy="165" rx="44" ry="50" fill="#ffffff"/>
+      <ellipse cx="280" cy="165" rx="44" ry="50" fill="#ffffff"/>
+      <circle cx="182" cy="175" r="18" fill="#0b1020"/>
+      <circle cx="292" cy="175" r="18" fill="#0b1020"/>
+      <circle cx="176" cy="170" r="6" fill="#ffffff" opacity="0.9"/>
+      <circle cx="286" cy="170" r="6" fill="#ffffff" opacity="0.9"/>
+      <path d="M140 142 C158 128, 184 128, 202 142" stroke="#0b1020" stroke-width="10" stroke-linecap="round" opacity="0.45"/>
+      <path d="M250 142 C268 128, 294 128, 312 142" stroke="#0b1020" stroke-width="10" stroke-linecap="round" opacity="0.45"/>
+    </g>
+
+    <!-- Nose & smile -->
+    <path d="M225 182 C212 202, 212 216, 225 228 C238 216, 238 202, 225 182 Z" fill="#0b1020" opacity="0.12"/>
+    <path d="M170 250 C200 280, 250 280, 280 250" fill="none" stroke="#0b1020" stroke-width="12" stroke-linecap="round" opacity="0.55"/>
+
+    <!-- Hair front -->
+    <path d="M110,145 C105,85 145,40 220,36 C310,32 355,92 342,168 C325,160 305,147 292,130 C265,95 220,88 190,112 C160,136 138,147 110,145 Z"
+          fill="url(#hair)"/>
+
+    <!-- Earrings -->
+    <circle cx="92" cy="220" r="16" fill="#fbbf24"/>
+    <circle cx="356" cy="220" r="16" fill="#fbbf24"/>
+
+    <!-- Body -->
+    <g transform="translate(-8,280)">
+      <path d="M92,60 C92,0 160,-10 230,-10 C300,-10 364,0 364,60 L364,240 C364,284 330,318 286,318 L170,318 C126,318 92,284 92,240 Z"
+            fill="url(#jacket)"/>
+      <path d="M170,0 C180,-6 210,-10 230,-10 C252,-10 280,-6 290,0 C275,28 255,44 230,50 C205,44 185,28 170,0 Z"
+            fill="url(#shirt)"/>
+      <!-- jacket lapels -->
+      <path d="M150,12 C172,70 198,102 230,110 C262,102 288,70 310,12 C300,6 284,0 230,0 C176,0 160,6 150,12 Z"
+            fill="#ffffff" opacity="0.14"/>
+
+      <!-- Arms -->
+      <path d="M92,86 C44,118 20,170 30,220 C40,270 90,286 120,270 C140,260 140,238 122,230 C102,222 88,204 92,182 C96,160 116,144 136,132 C154,122 162,92 150,76 C140,62 114,66 92,86 Z"
+            fill="url(#jacket)"/>
+      <path d="M364,86 C412,118 436,170 426,220 C416,270 366,286 336,270 C316,260 316,238 334,230 C354,222 368,204 364,182 C360,160 340,144 320,132 C302,122 294,92 306,76 C316,62 342,66 364,86 Z"
+            fill="url(#jacket)"/>
+
+      <!-- Hands -->
+      <ellipse cx="120" cy="276" rx="28" ry="24" fill="url(#skin)"/>
+      <ellipse cx="336" cy="276" rx="28" ry="24" fill="url(#skin)"/>
+    </g>
+
+    <!-- Laptop -->
+    <g transform="translate(95,610)">
+      <rect x="0" y="-120" width="260" height="160" rx="18" fill="url(#laptop)"/>
+      <rect x="18" y="-102" width="224" height="118" rx="14" fill="#0b1020" opacity="0.82"/>
+      <rect x="0" y="32" width="260" height="28" rx="14" fill="#cbd5e1"/>
+      <circle cx="130" cy="-42" r="22" fill="#38bdf8" opacity="0.8"/>
+      <path d="M118 -42 L128 -52 L140 -40 L152 -54" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Floating icons -->
+  <g filter="url(#spark)">
+    <g transform="translate(300,300)">
+      <rect x="0" y="0" width="210" height="140" rx="26" fill="#ffffff" opacity="0.20"/>
+      <rect x="16" y="18" width="178" height="16" rx="8" fill="#22c55e" opacity="0.85"/>
+      <rect x="16" y="48" width="138" height="16" rx="8" fill="#60a5fa" opacity="0.85"/>
+      <rect x="16" y="78" width="156" height="16" rx="8" fill="#f472b6" opacity="0.85"/>
+      <circle cx="178" cy="106" r="18" fill="#fbbf24"/>
+    </g>
+
+    <g transform="translate(1020,310)">
+      <circle cx="90" cy="70" r="70" fill="#ffffff" opacity="0.20"/>
+      <path d="M70 78 C70 55 88 40 110 40 C134 40 152 55 152 78 C152 102 134 116 110 116 C88 116 70 102 70 78 Z"
+            fill="#fb7185" opacity="0.9"/>
+      <path d="M60 82 L38 94" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity="0.75"/>
+      <path d="M162 82 L184 94" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity="0.75"/>
+      <path d="M110 28 L110 10" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity="0.75"/>
+      <circle cx="110" cy="78" r="10" fill="#ffffff" opacity="0.95"/>
+    </g>
+
+    <g transform="translate(300,610)">
+      <rect x="0" y="0" width="250" height="150" rx="30" fill="#ffffff" opacity="0.20"/>
+      <path d="M56 110 L56 64 C56 54 64 46 74 46 L176 46 C186 46 194 54 194 64 L194 110"
+            stroke="#0b1020" stroke-opacity="0.40" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M74 76 L116 96 L176 60" stroke="#22c55e" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="212" cy="44" r="18" fill="#38bdf8" opacity="0.9"/>
+    </g>
+
+    <g transform="translate(980,610)">
+      <rect x="0" y="0" width="240" height="150" rx="30" fill="#ffffff" opacity="0.20"/>
+      <rect x="24" y="26" width="192" height="98" rx="20" fill="#0b1020" opacity="0.40"/>
+      <path d="M54 92 C76 76 92 72 120 72 C152 72 170 80 190 96"
+            stroke="#fbbf24" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <circle cx="74" cy="60" r="10" fill="#60a5fa" opacity="0.95"/>
+      <circle cx="120" cy="56" r="10" fill="#f472b6" opacity="0.95"/>
+      <circle cx="164" cy="68" r="10" fill="#22c55e" opacity="0.95"/>
+    </g>
+
+    <!-- Sparkles -->
+    <g opacity="0.95">
+      <path d="M700 120 L716 160 L756 176 L716 192 L700 232 L684 192 L644 176 L684 160 Z" fill="#ffffff" opacity="0.8"/>
+      <path d="M1240 500 L1250 524 L1276 534 L1250 544 L1240 568 L1230 544 L1204 534 L1230 524 Z" fill="#ffffff" opacity="0.7"/>
+      <path d="M180 470 L192 494 L220 506 L192 518 L180 544 L168 518 L140 506 L168 494 Z" fill="#ffffff" opacity="0.7"/>
+    </g>
+  </g>
+</svg>

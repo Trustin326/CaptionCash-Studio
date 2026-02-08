@@ -5,16 +5,16 @@
  */
 window.APP_CONFIG = {
   brandName: "CaptionCash Studio",
-  supportEmail: "support@yourdomain.com",
+  supportEmail: "lovelacedpr@gmail.com",
 
   // 1) Create Stripe Payment Links for each plan
   // 2) Set success URL to: https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO/success.html
   // 3) Set cancel URL to:   https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO/cancel.html
   // 4) Paste the Payment Link URLs here:
   stripeLinks: {
-    starter: "https://buy.stripe.com/REPLACE_STARTER_LINK",
-    pro: "https://buy.stripe.com/REPLACE_PRO_LINK",
-    lifetime: "https://buy.stripe.com/REPLACE_LIFETIME_LINK"
+    starter: "https://buy.stripe.com/3cIbJ179E2gxaMTcAn4Ja05",
+    pro: "https://buy.stripe.com/28EcN5ctY2gx3krgQD4Ja06",
+    lifetime: "https://buy.stripe.com/eVq28r3Xs8EV8EL7g34Ja04"
   },
 
   // Optional: manual access keys (simple client-side gating, not "secure" protection)
